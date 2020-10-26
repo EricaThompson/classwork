@@ -1,0 +1,50 @@
+﻿1. 2. Init Value 
+3. Bfs, target prc
+
+
+
+
+Def bfs(target, prc)
+        Find a way to access the root
+        I will need to search each child, FIFO
+        [root, child1, child2, gchild1, gchild2, etc]
+
+
+        Iterate through each, evaluate if prc.call(ele) is == to the target 
+        It will be nil if it’s not in the tree.
+
+
+        Return self if self == target
+
+
+        Self.children.each do |child|
+        If the prc.call(child) && child == target
+                Return true
+End
+Return nil
+end
+End
+
+
+____________________________________________________________________________
+
+
+1. Check the root node and return true if the value == the target when passed into the block
+2. If not I should check the children
+3. Recursively call the DFS method that I am defining here on each of the children 
+4. Iterate over the children, recursively call the DFS method on each iteration
+5. Base case when the node does not include a child or children check if the value is equal to the target when passed into the proc
+
+
+Def DFS(target, prc)
+        
+        If self.children.empty?
+                Return prc.call(self.value) == target 
+        End
+
+
+        Self.children.each do |node|
+                Queue << self.DFS(node)
+                If (self.value) == 
+        end
+end
