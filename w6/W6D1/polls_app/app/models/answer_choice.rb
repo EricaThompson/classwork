@@ -5,8 +5,6 @@
 #  id          :bigint           not null, primary key
 #  answer      :text
 #  question_id :integer
-#  response_id :integer
-#  user_id     :integer
 #
 class AnswerChoice < ApplicationRecord
     belongs_to :question,

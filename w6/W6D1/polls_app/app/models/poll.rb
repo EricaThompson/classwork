@@ -2,10 +2,9 @@
 #
 # Table name: polls
 #
-#  id          :bigint           not null, primary key
-#  title       :string
-#  question_id :integer
-#  user_id     :integer
+#  id      :bigint           not null, primary key
+#  title   :string
+#  user_id :integer
 #
 class Poll < ApplicationRecord
     belongs_to :users,

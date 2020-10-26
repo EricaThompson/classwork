@@ -2,10 +2,9 @@
 #
 # Table name: questions
 #
-#  id               :bigint           not null, primary key
-#  question         :text
-#  answer_choice_id :integer
-#  poll_id          :integer
+#  id       :bigint           not null, primary key
+#  question :text
+#  poll_id  :integer
 #
 class Question < ApplicationRecord
     belongs_to :poll,

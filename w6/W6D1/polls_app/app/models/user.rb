@@ -2,10 +2,8 @@
 #
 # Table name: users
 #
-#  id          :bigint           not null, primary key
-#  username    :string
-#  poll_id     :integer
-#  response_id :integer
+#  id       :bigint           not null, primary key
+#  username :string
 #
 class User < ApplicationRecord
     has_many :authored_polls, #! through?

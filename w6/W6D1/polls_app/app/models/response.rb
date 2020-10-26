@@ -3,7 +3,6 @@
 # Table name: responses
 #
 #  id               :bigint           not null, primary key
-#  response         :text
 #  answer_choice_id :integer
 #  user_id          :integer
 #
