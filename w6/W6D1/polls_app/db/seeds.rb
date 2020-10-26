@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+users = User.create([{username: 'dolly_fan'}, {username: 'sailor_moon_fan'}])
+polls = Poll.create([{title: 'Dolly Parton Trivia'}, {title: 'Sailor Moon Trivia'}])
+questions = Question.create([{question: "Are there actual 'Islands in the Stream'?"}, {questin: "Can she 'win love by daylight?'"}])
+answer_choices = AnswerChoice.create([{answer: 'Yes!'},{answer: 'No!'}])
+responses = Response.create([{response: 'Correct!'}, {response: 'Try again!'}])
