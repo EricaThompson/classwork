@@ -1,0 +1,28 @@
+<h1>LET'S MAKE A CAT!</h1>
+
+<form action="<%= cats_url %>" method="POST">
+    <label>
+        Birth Date: <input type="text" name ="cat[birth_date]" value="<%= @cat.birth_date %>">
+    </label>
+
+    <label>
+        Color: <input type="text" name ="cat[color]" value="<%= @cat.color %>">
+    </label>
+
+    <label>
+        Name: <input type="text" name ="cat[name]" value="<%= @cat.name %>">
+    </label>
+
+    <label> Sex: 
+        <label for="M">M</label>
+        <input type="radio" name ="cat[sex]" value="M">
+        <label for="F">F</label>
+        <input type="radio" name ="cat[sex]" value="F">
+    </label>
+
+    <label>
+        Description: <input type="text" name ="cat[description]" value="<%= @cat.description %>">
+    </label>
+
+    <input type="submit" value="Create Cat!">
+</form>
