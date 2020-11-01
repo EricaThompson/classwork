@@ -25,9 +25,4 @@ class Cat < ApplicationRecord
         Date.today.year - self.birth_date.year
     end
 
-    def color
-        return COLOR
-    end
-
-
 end
