@@ -2,11 +2,20 @@
 
 <form action="<%= cats_url %>" method="POST">
     <label>
-        Birth Date: <input type="text" name ="cat[birth_date]" value="<%= @cat.birth_date %>">
+        Birth Date: <input type="date" name ="cat[birth_date]" value="<%= @cat.birth_date %>">
     </label>
 
-    <label>
-        Color: <input type="text" name ="cat[color]" value="<%= @cat.color %>">
+    <label> Color:
+        <select name='color'>
+        <option selected disabled value="-- select a color --">-- select a color --</option>
+            <option value="<%= @cat.color[0] %>"><%= @cat.color[0] %></option>
+            <option value="<%= @cat.color[1] %>"><%= @cat.color[1] %></option>
+            <option value="<%= @cat.color[2] %>"><%= @cat.color[2] %></option>
+            <option value="<%= @cat.color[3] %>"><%= @cat.color[3] %></option>
+            <option value="<%= @cat.color[4] %>"><%= @cat.color[4] %></option>
+            <option value="<%= @cat.color[5] %>"><%= @cat.color[5] %></option>
+            <option value="<%= @cat.color[6] %>"><%= @cat.color[6] %></option>
+        </select>
     </label>
 
     <label>
@@ -21,7 +30,7 @@
     </label>
 
     <label>
-        Description: <input type="text" name ="cat[description]" value="<%= @cat.description %>">
+        Description: <textarea name ="cat[description]" value="<%= @cat.description %>"></textarea>
     </label>
 
     <input type="submit" value="Create Cat!">

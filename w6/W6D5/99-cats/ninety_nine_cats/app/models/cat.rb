@@ -13,14 +13,20 @@
 #
 require "action_view"
 
+COLOR = ['red', 'gray', 'blue', 'yellow', 'white', 'purple', 'black', 'orange', 'brown', 'green', 'pink']
+
 class Cat < ApplicationRecord
     include ActionView::Helpers::DateHelper
     validates :birth_date, :color, :name, :sex, :description, presence: true
-    validates :color, inclusion: { in: ['red', 'gray', 'blue', 'yellow', 'white', 'purple', 'black', 'orange', 'brown', 'green', 'pink'] }
+    validates :color, inclusion: { in: COLOR  }
     validates :sex, inclusion: { in: ['F', 'M'] }
 
     def age
         Date.today.year - self.birth_date.year
+    end
+
+    def color
+        return COLOR
     end
 
 
