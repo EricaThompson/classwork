@@ -1,42 +1,4 @@
 <h1>LET'S MAKE A CAT!</h1>
 
-<form action="<%= cats_url %>" method="POST">
-    <label>
-        Birth Date: <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>">
-    </label>
+<%= render 'form', cat: @cat %>
 
-
-    <label> Color:
-        <select name='cat[color]'>
-        <option selected disabled value="-- select a color --">-- select a color --</option>
-            <option value= <%= COLOR[0] %>> <%= COLOR[0] %> </option>
-            <option value= <%= COLOR[1] %>> <%= COLOR[1] %> </option>
-            <option value= <%= COLOR[2] %>> <%= COLOR[2] %> </option>
-            <option value= <%= COLOR[3] %>> <%= COLOR[3] %> </option>
-            <option value= <%= COLOR[4] %>> <%= COLOR[4] %> </option>
-            <option value= <%= COLOR[5] %>> <%= COLOR[5] %> </option>
-            <option value= <%= COLOR[6] %>> <%= COLOR[6] %> </option>
-            <option value= <%= COLOR[7] %>> <%= COLOR[7] %> </option>
-            <option value= <%= COLOR[8] %>> <%= COLOR[8] %> </option>
-            <option value= <%= COLOR[9] %>> <%= COLOR[9] %> </option>
-            <option value= <%= COLOR[10] %>> <%= COLOR[10] %> </option>
-        </select>
-    </label>
-
-    <label>
-        Name: <input type="text" name ="cat[name]" value="<%= @cat.name %>">
-    </label>
-
-    <label> Sex: 
-        <label for="M">M</label>
-        <input type="radio" name ="cat[sex]" value="M" <%= @cat.sex == "M" ? "checked" : "" %> >
-        <label for="F">F</label>
-        <input type="radio" name ="cat[sex]" value="F" <%= @cat.sex == "F" ? "checked" : "" %> >
-    </label>
-
-    <label>
-        Description: <textarea name ="cat[description]" value="<%= @cat.description %>"></textarea>
-    </label>
-
-    <input type="submit" value="Create Cat!">
-</form>

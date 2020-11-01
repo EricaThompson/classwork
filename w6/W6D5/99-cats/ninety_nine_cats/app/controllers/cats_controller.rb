@@ -15,6 +15,7 @@ class CatsController < ApplicationController
         render :new
     end
 
+
     def create
         # debugger
         @cat = Cat.new(cat_params)
@@ -34,6 +35,7 @@ class CatsController < ApplicationController
         else
             render json: 'No cat here!', status: 404
         end
+
     end
 
     def update
