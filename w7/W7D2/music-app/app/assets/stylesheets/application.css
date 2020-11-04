@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    font-family: "Fredoka One", cursive;
+    color: purple; 
+}
+
+header {
+    font-size: 50px;
+    color: turquoise;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    background-color: palevioletred;
+    border-radius: 10%;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.credentials {
+    margin: 10px auto;
+    width: 200px;
+    text-align: center;
+}
+
+h1 {
+    margin: 50px auto;
+    width: 250px;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+/* div > label {
+    text-align: center;
+} */
+
+.nav-buttons {
+    margin-top: 20px;
+}
+
+input {
+    margin-bottom: 20px;
+}
+
+.submit {
+    background-color: turquoise;
+    color: white;
+    border-radius: 25%;
+    border-color: white;
+    padding: 10px;
+    font-weight: bolder;
+}
