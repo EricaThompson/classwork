@@ -14,16 +14,19 @@ class UsersController < ApplicationController
             login(@user)
             flash[:errors] = @user.errors.full_messages
             render :show
-        else
+        elsif @user.persisted?
             flash[:errors] = @user.errors.full_messages
+            render :show
+        else
             render :new
         end
     end
 
     def show
         # @user = User.find_by(email: user_params[:email])
-        @user = 'user email should be here'
-        return @user
+        # @user = 'user email should be here'
+        # return @user
+        render :show
     end
 
     private
