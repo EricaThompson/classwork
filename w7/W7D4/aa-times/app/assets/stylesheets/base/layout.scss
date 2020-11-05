@@ -7,29 +7,48 @@ html {
 
 body {
 	width: 80%;
-	margin: 0, auto;
+	margin: 0 auto;
 	font-family: $serif;
-	font-size: 12px
+	font-size: 12px;
 }
 
 button {
-	// background-color:
+	background-color: $light-blue;
 	// border-color:
-	// color:
-	// font-weight:
-	// padding:
-	// border-radius:
+	color: white;
+	font-weight: bold;
+	padding: 6px 10px;
+	border-radius: 5%;
 	// transition:
-	// font-family:
+	font-family: arial;
 	// text-transform:
-	// font-size:
+	font-size: 12px;
 	// text-align:
+	margin: 2px;
+
+}
+
+.fa-cog {
+	
+	background-color: white;
+	color: black;
+	font-size: 16px;
+	font-weight: 0;
+	// margin-left: 5px;
 }
 
 button:hover {
-	// background-color:
+	background-color: $blue;
 	// border-color:
 }
+
+.fa-cog:hover{
+	background-color: $lightest-gray;
+}
+
+// .right-nav {
+// 	display: flex;
+// }
 
 /*
 	Header Rules
@@ -38,7 +57,7 @@ button:hover {
 hr {
 	border: 0;
 	height: 1px;
-	background-color: $light-gray;
+	background-color: $lightest-gray;
 }
 
 .hr-top, .hr-bottom {

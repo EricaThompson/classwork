@@ -9,13 +9,14 @@ span, article, footer, time, small {
   padding: 0px;
   border: none;
   outline: none;
-  font-weight: none;
+  font-weight: 0;
   color: none;
   text-align: none;
   text-decoration: none;
   vertical-align: none;
   box-sizing: inherit;
   background: none;
+  
 }
 
 ol, ul {
@@ -53,3 +54,4 @@ input[type="submit"] {
 .group:after {
   overflow: auto;
 }
+
