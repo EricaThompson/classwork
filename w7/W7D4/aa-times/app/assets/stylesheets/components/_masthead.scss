@@ -41,7 +41,6 @@
 
 .masthead-links {
 	display: flex;
-	font-family: $sans-serif;
 	font-size: 12px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -97,6 +96,11 @@ li:last-child {
 
 a:hover {
 	text-decoration: underline;
+}
+
+.stock {
+	color: green;
+	
 }
 
 // .masthead-link > li {
