@@ -14,9 +14,11 @@
 
 	<nav class ='right-nav'>
 		<ul>
-			<button class='blue-buttons'>SUBSCRIBE NOW</button>
-			<button class='blue-buttons'>LOG IN</button>
-			<button class="fas fa-cog"></button>
+			<li><button class='blue-buttons'>SUBSCRIBE NOW</button></li>
+			<li><button class='blue-buttons'>LOG IN</button></li>
+			<li id="gear-icon"><button class="fas fa-cog"></button>
+				<%= render partial: 'shared/gear_dropdown' %>
+			</li>
 			
 		</ul>
 	</nav>
