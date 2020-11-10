@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     #when we create, we don't need to save! but we will need to the user model when we save self 
     
     def new 
+        @user = User.new
         render :new
     end
 
