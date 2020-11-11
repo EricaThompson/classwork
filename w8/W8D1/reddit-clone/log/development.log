@@ -7253,3 +7253,158 @@ Processing by SubsController#index as HTML
 Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 1.8ms)
 
 
+Started GET "/" for ::1 at 2020-11-09 19:39:30 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/EricaThompson/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/EricaThompson/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/EricaThompson/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.4.4/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2020-11-09 19:39:39 -0800
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.9ms)
+
+
+
+NoMethodError - undefined method `before_action' for #<Class:0x00007fe11e506ca0>
+Did you mean?  before_commit:
+  app/models/user.rb:17:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:22:in `index'
+
+Started POST "/__better_errors/3f90d1a996f75963/variables" for ::1 at 2020-11-09 19:39:40 -0800
+Started GET "/users/new" for ::1 at 2020-11-09 19:39:43 -0800
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `before_action' for #<Class:0x00007fe17d276058>
+Did you mean?  before_commit:
+  app/models/user.rb:17:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:6:in `new'
+
+Started POST "/__better_errors/afb256b1bf7e89a9/variables" for ::1 at 2020-11-09 19:39:43 -0800
+Started GET "/users/new" for ::1 at 2020-11-09 19:39:57 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SEWODlztGAWIKDgUQQktYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 201ms (Views: 180.6ms | ActiveRecord: 8.3ms)
+
+
+Started DELETE "/session" for ::1 at 2020-11-09 19:40:55 -0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XVhnX63vC3UEtgQWgFdGo/AFDFkchTZC6YQSTdVlckZUpEFW0kKV+ELpfwT1d+a13HasvuY7+8a6vr6wwOoTaw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SEWODlztGAWIKDgUQQktYA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "HoOihVtWvZ0dr-8WsKzDdw"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HoOihVtWvZ0dr-8WsKzDdw"], ["updated_at", "2020-11-10 03:40:55.483380"], ["id", 18]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/session/new" for ::1 at 2020-11-09 19:40:55 -0800
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session" for ::1 at 2020-11-09 19:40:57 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ESGiQKQAw/bxn+rclFFfXfGIucdxtPE98Oh2qHRVo8YY3YRJ261de7fAkc7hcf9L3fsZIIsKPLmj0tpVYdrC6w==", "user"=>{"username"=>"a@a.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "a@a.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "e16C-9psMhvV78rvXsvxKw"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "e16C-9psMhvV78rvXsvxKw"], ["updated_at", "2020-11-10 03:40:57.290703"], ["id", 6]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 299ms (ActiveRecord: 6.1ms)
+
+
+Started POST "/session" for ::1 at 2020-11-09 19:41:02 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ESGiQKQAw/bxn+rclFFfXfGIucdxtPE98Oh2qHRVo8YY3YRJ261de7fAkc7hcf9L3fsZIIsKPLmj0tpVYdrC6w==", "user"=>{"username"=>"a@a.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "a@a.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "2PvURRxCFktK2xvXTYzv1g"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "2PvURRxCFktK2xvXTYzv1g"], ["updated_at", "2020-11-10 03:41:02.726280"], ["id", 6]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 285ms (ActiveRecord: 2.2ms)
+
+
+Started POST "/session" for ::1 at 2020-11-09 19:41:34 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ESGiQKQAw/bxn+rclFFfXfGIucdxtPE98Oh2qHRVo8YY3YRJ261de7fAkc7hcf9L3fsZIIsKPLmj0tpVYdrC6w==", "user"=>{"username"=>"a@a.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "a@a.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "9D1_NhTFZDirFLQjNTd4sw"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "9D1_NhTFZDirFLQjNTd4sw"], ["updated_at", "2020-11-10 03:41:34.633078"], ["id", 6]]
+  ↳ app/models/user.rb:40
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 287ms (ActiveRecord: 2.2ms)
+
+
+Started POST "/session" for ::1 at 2020-11-09 19:41:34 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ESGiQKQAw/bxn+rclFFfXfGIucdxtPE98Oh2qHRVo8YY3YRJ261de7fAkc7hcf9L3fsZIIsKPLmj0tpVYdrC6w==", "user"=>{"username"=>"a@a.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "a@a.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ob0WCGOkiK993-7HmJatJQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ob0WCGOkiK993-7HmJatJQ"], ["updated_at", "2020-11-10 03:41:34.920846"], ["id", 6]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+Started POST "/session" for ::1 at 2020-11-09 19:41:34 -0800
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 294ms (ActiveRecord: 1.8ms)
+
+
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ESGiQKQAw/bxn+rclFFfXfGIucdxtPE98Oh2qHRVo8YY3YRJ261de7fAkc7hcf9L3fsZIIsKPLmj0tpVYdrC6w==", "user"=>{"username"=>"a@a.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "a@a.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "MDAGJZeUEhjuchrGOEK-2Q"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "MDAGJZeUEhjuchrGOEK-2Q"], ["updated_at", "2020-11-10 03:41:35.218118"], ["id", 6]]
+  ↳ app/models/user.rb:40
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 284ms (ActiveRecord: 2.7ms)
+
+

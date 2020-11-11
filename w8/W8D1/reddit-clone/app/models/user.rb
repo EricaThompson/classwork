@@ -14,7 +14,7 @@ class User < ApplicationRecord
         class_name: :Sub
 
     attr_reader :password
-    after_initialize :ensure_session_token!
+    before_validation :ensure_session_token!
     #ASPIRE
 
     def self.find_by_credentials(username, password)
