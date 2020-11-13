@@ -9,8 +9,6 @@ function Piece (color) {
  * Returns the color opposite the current piece.
  */
 Piece.prototype.oppColor = function () {
-    // let darkPiece = "black"
-    // let lightPiece = "white"
     if (this.color === "white") {
         return "black"
     } else {
