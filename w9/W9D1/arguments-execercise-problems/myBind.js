@@ -1,22 +1,22 @@
-// Function.prototype.myBind = function(context){
-//     const args = Array.from(arguments).slice(1);
-//     const that = this;
+Function.prototype.myBind = function(context){
+    const args = Array.from(arguments).slice(1);
+    const that = this;
 
-//     return function(){ 
-//         const args2 = Array.from(arguments);
-//         const argsComplete = args.concat(args2);
-//         that.apply(context, argsComplete);
-//     };
-// }
+    return function(){ 
+        const args2 = Array.from(arguments);
+        const argsComplete = args.concat(args2);
+        that.apply(context, argsComplete);
+    };
+}
 
 Function.prototype.myBind = function(context, ...rest){
     const args = rest;
-    const that = this;
+    // const that = this;
 
-    return function(...rest){ 
+    return (...rest) => { 
         const args2 = rest;
         const argsComplete = args.concat(args2);
-        that.apply(context, argsComplete);
+        this.apply(context, argsComplete);
     };
 }
 
