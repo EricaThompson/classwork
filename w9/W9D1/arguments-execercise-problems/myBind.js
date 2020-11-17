@@ -16,6 +16,7 @@ Function.prototype.myBind = function(context, ...rest){
     return (...rest) => { 
         const args2 = rest;
         const argsComplete = args.concat(args2);
+        //can use apply or call, apply needs array, call need commas
         this.apply(context, argsComplete);
     };
 }
