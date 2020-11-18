@@ -7,11 +7,11 @@ const MovingObject = function(options){
 
 MovingObject.prototype.draw = function(ctx) {
     ctx.beginPath();
-    ctx.arc(50, 50, 75, 0, 2*Math.PI);
-    ctx.strokeStyle = "salmon";
+    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2*Math.PI);
+    ctx.strokeStyle = 'purple';
     ctx.lineWidth = 2;
     ctx.stroke();
-    ctx.fillStyle = "lightblue";
+    ctx.fillStyle = this.color;
     ctx.fill();
 }
 

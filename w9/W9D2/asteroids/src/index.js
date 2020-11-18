@@ -1,4 +1,7 @@
 const MovingObject = require("./moving_object.js");
+const Asteroid = require("./asteroid.js");
+const Game = require("./game.js");
+const GameView = require("./game_view.js");
 
 document.addEventListener("DOMContentLoaded", function(){   
     const canvas = document.getElementById("game-canvas");
@@ -14,9 +17,15 @@ document.addEventListener("DOMContentLoaded", function(){
         color: "#00FF00"
     });
 
+    window.Asteroid = Asteroid;
+
+    window.Game = Game; 
+
     window.ctx = ctx;
     
     window.mo = mo;
+    
+    window.GameView = GameView;
     
 })
 
