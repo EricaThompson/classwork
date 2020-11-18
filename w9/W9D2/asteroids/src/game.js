@@ -26,12 +26,16 @@ Game.prototype.draw = function(ctx){
     this.asteroids.forEach(function(asteroid){
         asteroid.draw(ctx);
     })
-}
+};
 
 Game.prototype.moveObjects = function(){
     this.asteroids.forEach(function (asteroid) {
         asteroid.move();
     })
+};
+
+Game.prototype.wrap = function(pos) {
+
 }
 
 module.exports = Game; 

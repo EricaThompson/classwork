@@ -27,9 +27,10 @@ eval("const Util = __webpack_require__(/*! ./util.js */ \"./src/util.js\");\ncon
   \*********************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
+/*! CommonJS bailout: module.exports is used directly at 41:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const Asteroid = __webpack_require__(/*! ./asteroid.js */ \"./src/asteroid.js\")\n\nconst Game = function(dimX, dimY, num_asteroids) {\n    this.DIM_X = dimX;\n    this.DIM_Y = dimY;\n    this.NUM_ASTEROIDS = num_asteroids\n    this.asteroids = [];\n    \n    while (this.asteroids.length < this.NUM_ASTEROIDS){\n        this.addAsteroids();\n    }\n\n\n};\n\nGame.prototype.addAsteroids = function(){\n    // randomizer \n    const position_x = Math.random() * this.DIM_X;\n    const position_y = Math.random() * this.DIM_Y;\n    this.asteroids.push(new Asteroid( { pos: [position_x, position_y] }));\n\n};\n\nGame.prototype.draw = function(ctx){\n    ctx.clearRect(this.DIM_X, this.DIM_Y, 500, 500);\n    this.asteroids.forEach(function(asteroid){\n        asteroid.draw(ctx);\n    })\n}\n\nGame.prototype.moveObjects = function(){\n    this.asteroids.forEach(function (asteroid) {\n        asteroid.move();\n    })\n}\n\nmodule.exports = Game; \n\n//# sourceURL=webpack:///./src/game.js?");
+eval("const Asteroid = __webpack_require__(/*! ./asteroid.js */ \"./src/asteroid.js\")\n\nconst Game = function(dimX, dimY, num_asteroids) {\n    this.DIM_X = dimX;\n    this.DIM_Y = dimY;\n    this.NUM_ASTEROIDS = num_asteroids\n    this.asteroids = [];\n    \n    while (this.asteroids.length < this.NUM_ASTEROIDS){\n        this.addAsteroids();\n    }\n\n\n};\n\nGame.prototype.addAsteroids = function(){\n    // randomizer \n    const position_x = Math.random() * this.DIM_X;\n    const position_y = Math.random() * this.DIM_Y;\n    this.asteroids.push(new Asteroid( { pos: [position_x, position_y] }));\n\n};\n\nGame.prototype.draw = function(ctx){\n    ctx.clearRect(this.DIM_X, this.DIM_Y, 500, 500);\n    this.asteroids.forEach(function(asteroid){\n        asteroid.draw(ctx);\n    })\n};\n\nGame.prototype.moveObjects = function(){\n    this.asteroids.forEach(function (asteroid) {\n        asteroid.move();\n    })\n};\n\nGame.prototype.wrap = function(pos) {\n\n}\n\nmodule.exports = Game; \n\n//# sourceURL=webpack:///./src/game.js?");
 
 /***/ }),
 
@@ -39,7 +40,6 @@ eval("const Asteroid = __webpack_require__(/*! ./asteroid.js */ \"./src/asteroid
   \**************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 16:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("const Game = __webpack_require__(/*! ./game */ \"./src/game.js\")\n\nconst GameView = function(ctx){\n    this.game = new Game(500,500,10);\n    this.ctx = ctx;\n}\n\nGameView.prototype.start = function(){\n    let that = this;\n    setInterval(function(){\n        that.game.moveObjects();\n        that.game.draw(that.ctx);\n    }, 20);\n}\n\nmodule.exports = GameView;\n\n//# sourceURL=webpack:///./src/game_view.js?");
