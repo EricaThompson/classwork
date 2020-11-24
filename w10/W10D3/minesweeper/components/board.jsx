@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tile from './tile';
+import Row from './row'
 
 export default class BoardComponent extends Component {
     constructor(props){
@@ -10,15 +11,17 @@ export default class BoardComponent extends Component {
     }
 
     render() {
-      const tiles = this.grid.flat()
-      console.log(tiles)
-      const tilesmapped = tiles.map(el => el.bombed ? "b" : "n")
-      console.log(tilesmapped)
+      // const tiles = this.grid.flat()
+      // console.log(tiles)
+      // const tilesmapped = tiles.map(el => el.bombed ? "b" : "n")
+      // console.log(tilesmapped)
+      // {tilesmapped.map((el, idx) => <li key={idx}>{el}</li>)}
+      const rows = this.grid.map((row, idx) => <Row key={idx} data={row}/>)
 
         return (
-            <ul>
-                {tilesmapped.map((el, idx) => <li key={idx}>{el}</li>)}
-            </ul>
+            <div>
+              {rows}
+            </div>
         );
     }
 }
