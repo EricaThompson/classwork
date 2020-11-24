@@ -11,7 +11,8 @@ export default class Game extends Component {
         this.updateGame = this.updateGame.bind(this);
     }
 
-    updateGame(){
+    updateGame(board, r, c){
+        board[r][c].explore()
     }
 
     

@@ -7,20 +7,27 @@ export default class BoardComponent extends Component {
         super(props)
         console.log(this.props.board.grid)
         this.grid = this.props.board.grid
-        this.updateBoard = this.props.updateBoard
+        this.state = {
+            grid: this.grid,
+            change: true
+        }
+        this.reRender = this.reRender.bind(this);
+    }
+
+    reRender(){
+        this.setState({change: !this.state.change})
     }
 
     render() {
-      // const tiles = this.grid.flat()
-      // console.log(tiles)
-      // const tilesmapped = tiles.map(el => el.bombed ? "b" : "n")
-      // console.log(tilesmapped)
-      // {tilesmapped.map((el, idx) => <li key={idx}>{el}</li>)}
-      const rows = this.grid.map((row, idx) => <Row key={idx} data={row}/>)
+
+
+   
+        const rows = this.grid.map((row, idx) => <Row reRender={this.reRender} board={this.state.grid} row={idx} updateGame={this.props.updateGame} key={idx} data={row}/>)
+        // console.log("updateGame", this.props.updateGame, "board", this.props.board, "row", this.props.row)
 
         return (
             <div>
-              {rows}
+                {rows}
             </div>
         );
     }
