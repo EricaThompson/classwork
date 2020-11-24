@@ -1,10 +1,12 @@
 
 import React from 'react';
+import Game from './components/game';
 
 export default function App() {
   return (
     <div>
-        <p>Hello All.</p>
+        <p>Hello React.</p>
+        <Game />
     </div>
   );
 }
