@@ -1,0 +1,67 @@
+/* .body {
+} */
+.game {
+    display: flex;
+}
+
+.board {
+    margin-top: 10px;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+
+.tile {
+    background-color: beige;
+    margin: 2px 1px;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    text-align: center;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+}
+
+.explored {
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.modal {
+    /* display: none; */
+    border: 3px solid gray;
+    border-radius: 5px;
+    font-size: 10px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: arial;
+    font-weight: lighter;
+
+}
+
+/* .game-over {
+    display: block;
+} */
+
+/* .wonShow{
+    display:block;
+} */
+
+.lostShow{
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+/* .noShow {
+
+} */

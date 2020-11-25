@@ -10,23 +10,28 @@ export default class BoardComponent extends Component {
         this.state = {
             grid: this.grid,
             change: true
+            // won: false,
+            // lose: false
         }
         this.reRender = this.reRender.bind(this);
     }
 
     reRender(){
         this.setState({change: !this.state.change})
+        // this.setState({won: this.props.board.won})
+        // this.setState({lose: this.props.board.lose})
     }
 
     render() {
 
 
-   
-        const rows = this.grid.map((row, idx) => <Row reRender={this.reRender} board={this.state.grid} row={idx} updateGame={this.props.updateGame} key={idx} data={row}/>)
+
+        const rows = this.grid.map((row, idx) => <Row reRender={this.props.reRender} board={this.state.grid} row={idx} updateGame={this.props.updateGame} key={idx} data={row}/>)
         // console.log("updateGame", this.props.updateGame, "board", this.props.board, "row", this.props.row)
+       
 
         return (
-            <div>
+            <div className='board'>
                 {rows}
             </div>
         );

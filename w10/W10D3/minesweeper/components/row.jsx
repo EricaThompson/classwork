@@ -12,7 +12,7 @@ export default class Row extends Component {
         const tiles = this.props.data.map((el, idx) => <Tile reRender={this.props.reRender} board={this.props.board} row={this.props.row} updateGame={this.props.updateGame} key={idx} col={idx} value={el} />)
 
         return (
-        <div>
+        <div className="row">
             {
             tiles
             } 
