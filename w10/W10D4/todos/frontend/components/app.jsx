@@ -1,10 +1,12 @@
 import React from 'react';
 import TodoRedux from '../todo_redux';
 
-export const App = (props) => {
+const App = (props) => {
     return (
         <div>
-            <TodoRedux />
+            This is the App!!!!!!
         </div>
     )
 }
+
+export default App;
