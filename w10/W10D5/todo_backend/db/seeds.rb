@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+todos = Todo.create([{title: "started", body: "get", done: true}, {title: "for", body: "127.0.0.1", done: true}, {title: "200 OK", body: "25ms", done: false}])
