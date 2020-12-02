@@ -1,12 +1,13 @@
 import * as EntityActions from '../actions/entity_actions'
 
-const pokemonsReducer = (oldState, actions) => {
+const pokemonsReducer = (oldState, action) => {
   Object.freeze(oldState);
   const nextState = Object.assign({}, oldState)
 
-  switch (actions.type) {
+  switch (action.type) {
     case EntityActions.RECEIVE_POKEMONS:
-      nextState[]
+      nextState[pokemon.id] = action.pokemon
+      return nextState
     default:
       return oldState
   }
