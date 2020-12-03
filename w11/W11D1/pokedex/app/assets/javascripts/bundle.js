@@ -2,6 +2,32 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/actions/pokemon_actions.js":
+/*!*********************************************!*\
+  !*** ./frontend/actions/pokemon_actions.js ***!
+  \*********************************************/
+/*! namespace exports */
+/*! export RECEIVE_ALL_POKEMON [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export receiveAllPokemon [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RECEIVE_ALL_POKEMON": () => /* binding */ RECEIVE_ALL_POKEMON,
+/* harmony export */   "receiveAllPokemon": () => /* binding */ receiveAllPokemon
+/* harmony export */ });
+var RECEIVE_ALL_POKEMON = 'RECEIVE_ALL_POKEMON';
+var receiveAllPokemon = function receiveAllPokemon(pokemon) {
+  return {
+    type: RECEIVE_ALL_POKEMON,
+    data: pokemon
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/components/pokedex.jsx":
 /*!*****************************************!*\
   !*** ./frontend/components/pokedex.jsx ***!
@@ -15,6 +41,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./root */ "./frontend/components/root.jsx");
+/* harmony import */ var _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/pokemon_actions */ "./frontend/actions/pokemon_actions.js");
+/* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/api_util */ "./frontend/util/api_util.js");
+
+
 
 
 
@@ -22,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_root__WEBPACK_IMPORTED_MODULE_2__.Root, null), root);
 });
+window.receiveAllPokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_3__.receiveAllPokemon;
+window.fetchAllPokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_4__.fetchAllPokemon;
 
 /***/ }),
 
@@ -43,6 +75,30 @@ __webpack_require__.r(__webpack_exports__);
 
 var Root = function Root() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Pokemon"));
+};
+
+/***/ }),
+
+/***/ "./frontend/util/api_util.js":
+/*!***********************************!*\
+  !*** ./frontend/util/api_util.js ***!
+  \***********************************/
+/*! namespace exports */
+/*! export fetchAllPokemon [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fetchAllPokemon": () => /* binding */ fetchAllPokemon
+/* harmony export */ });
+var fetchAllPokemon = function fetchAllPokemon() {
+  return $.ajax({
+    url: "/api/pokemons",
+    method: 'GET' // data: {'test': {'testing': 'tester'}}
+
+  });
 };
 
 /***/ }),
