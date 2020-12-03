@@ -5,4 +5,4 @@ const entitiesReducer = combineReducers({
     pokemon: pokemonReducer
 })
 
-// export const entitiesReducer;
+export default entitiesReducer;
