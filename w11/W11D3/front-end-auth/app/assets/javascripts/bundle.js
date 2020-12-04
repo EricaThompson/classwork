@@ -166,7 +166,7 @@ var _session = __webpack_require__(/*! ../utils/session */ "./frontend/utils/ses
 var RECEIVE_CURRENT_USER = exports.RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = exports.LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 
-var receieveCurrentUser = function receieveCurrentUser(user) {
+var receiveCurrentUser = function receiveCurrentUser(user) {
     return {
         type: RECEIVE_CURRENT_USER,
         user: user
@@ -182,7 +182,7 @@ var logoutCurrentUser = function logoutCurrentUser() {
 var createNewUser = exports.createNewUser = function createNewUser(formUser) {
     return function (dispatch) {
         return (0, _session.postUser)(formUser).then(function (user) {
-            return dispatch(receieveCurrentUser(user));
+            return dispatch(receiveCurrentUser(user));
         });
     };
 };
